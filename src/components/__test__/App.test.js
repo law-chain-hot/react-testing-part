@@ -12,4 +12,4 @@ it('shows a comment box', () => {
 
     ReactDOM.unmountComponentAtNode(div)
     
-})
+}) 
