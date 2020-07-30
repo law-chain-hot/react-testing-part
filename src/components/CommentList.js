@@ -1,7 +1,22 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
-const CommentBox = () =>{
-    return <div>Comment Box</div>
+const CommentList = (props) => {
+    const renderComments = props.comments.map(comment => {
+        return <li key={comment}>{comment}</li>
+    })
+
+    return (
+        <div>
+            <ul>
+                {renderComments}
+            </ul>
+        </div>
+    )
 }
 
-export default CommentBox
+function mapStateToProps(state) {
+    return { comments: state.commentsPart.comments }
+}
+
+export default connect(mapStateToProps, null)(CommentList)
