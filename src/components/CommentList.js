@@ -8,6 +8,7 @@ const CommentList = (props) => {
 
     return (
         <div>
+            <h4>Comments page</h4>
             <ul>
                 {renderComments}
             </ul>
