@@ -8,8 +8,7 @@ export default function (state = {comments: []}, action) {
             return { ...state, comments: [...state.comments, payload]}
         }
         case FETCH_COMMENTS: {
-            // console.log('payload')
-            debugger
+            // debugger
             const fetchedComments = payload.data.map(comment => comment.name)
             return {...state, comments: [...state.comments, ...fetchedComments]}
         }

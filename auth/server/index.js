@@ -6,6 +6,7 @@ const morgan = require('morgan')
 const app = express()
 const router = require('./router')
 const mongoose = require('mongoose')
+const cors = require('cors')
 
 
 // DB setup
@@ -27,6 +28,7 @@ connection.on("connected", function() {
 // App setup
 // income request will be passed into these 2 parts
 app.use(morgan('combined'))  // logging framework
+app.use(cors())
 app.use(bodyParser.json({ type: '*/*'} ))
 router(app)
 

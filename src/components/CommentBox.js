@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
+import { compose } from 'redux'
 
 import * as actions from 'redux/actions'
 import requireAuth from 'components/requireAuth'
@@ -45,9 +46,12 @@ const CommentBox = (props) => {
 
 
 
-export default connect(null, actions)(requireAuth(CommentBox))
 
 
+export default compose(
+    connect(null, actions),
+    requireAuth,
+)(CommentBox)
 
 
 
